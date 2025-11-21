@@ -6,7 +6,10 @@ function MainLayout() {
   return (
    <>
    <Navbar/>
-   <Outlet/>
+   <div className='main_container'>
+    <Outlet/>
+   </div>
+   
    </>
   )
 }
