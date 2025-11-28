@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 interface LoginProps {
      name?: string;
      onChange?: (
@@ -10,23 +9,18 @@ interface LoginProps {
      value? : string,
 
 }
-
-
 const GeneralInput = ({
     onChange,
     name,
     type,
     placeholder
 } : LoginProps) => {
-
-
   return (
     <input 
     type={type}
     onChange={onChange}
     placeholder={placeholder}
     className=''
-    
     />
   )
 }

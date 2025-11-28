@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import type { RootState, AppDispatch } from '../../store/store';
 import { loginUser } from '../../slices/authSlice';
 import GeneralInput from '../../components/GeneralInput/GeneralInput';
@@ -17,7 +17,8 @@ const Login = () => {
 
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const from = location.state?.from || "/";
     const {isLoading, isAuthenticated, error} = useSelector((state: RootState) => state.auth);
 
     if (isAuthenticated) {
@@ -26,14 +27,12 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) =>{
     e.preventDefault();
+    dispatch(loginUser({email,password}));
 
-    dispatch(loginUser({email, password})).unwrap()
-    .then(()=>{
-        console.log('Login realizado com sucesso!');
-    })
-    .catch((err) => {
-        console.error('Falha no login:', err);
-    })
+    if(isAuthenticated){
+      navigate(from,{replace:true})
+    }
+
   }
 
   return (
@@ -53,7 +52,7 @@ const Login = () => {
          onChange={(e)=> setPassword(e.target.value)}
         />
         <GreenButton 
-        type='submit'     
+        type='submit'
         >
           Log-in
         </GreenButton>
