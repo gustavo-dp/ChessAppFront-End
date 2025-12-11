@@ -31,14 +31,14 @@ const Login = () => {
     dispatch(loginUser({ email, password }));
 
   }
-  /* useEffect(() => {
-     // Toda vez que isAuthenticated mudar, esse código roda:
-     if (isAuthenticated) {
-       // Agora sim! A pizza chegou, podemos ir para a home.
-       navigate(from, { replace: true });
-     }
-   }, [isAuthenticated, navigate, from]);
- */
+  useEffect(() => {
+
+    if (isAuthenticated) {
+
+      navigate(from, { replace: true });
+    }
+  }, [isAuthenticated, navigate, from]);
+
   return (
     <AuthLayout>
       <GeneralCard>
