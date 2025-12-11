@@ -1,16 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
 
-body{
-    padding: 0 10%;
+body {
+    background-color: var(--bg-outer);
+    color: var(--ink);
+    font-family: 'Lora', serif;
     min-height: 100vh;
-    margin: 0;
-   
-}
-html {
-  
-    scroll-behavior: smooth;
-}
-.main_container{
     display: flex;
+    flex-direction: column;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+:root {
+    --bg-outer: #26201D;
+
+    --paper: #F2EFE5;
+
+    --paper-border: #D6CFC0;
+    --ink: #1F1F1F;
+
+    --text-on-dark: #E0D8CC;
+
+    --accent: #A67B5B;
+
+    --gold: #C5A065;
+
+}

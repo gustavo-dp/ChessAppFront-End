@@ -4,13 +4,12 @@ import { Outlet } from 'react-router-dom'
 import './mainLayout.css'
 function MainLayout() {
   return (
-   <>
-   <Navbar/>
-   <div className='main_container'>
-    <Outlet/>
-   </div>
-   
-   </>
+    <>
+      <div className='main_container'>
+        <Outlet />
+      </div>
+
+    </>
   )
 }
 

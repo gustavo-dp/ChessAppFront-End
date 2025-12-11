@@ -1,13 +1,38 @@
-ul{
-    padding: 0px;
+nav {
+    padding: 25px 60px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    list-style: none;
 }
-ul a {
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--text-on-dark);
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ícone de Torre simples SVG */
+.brand svg {
+    stroke: var(--gold);
+}
+
+.nav-links a {
+    color: rgba(224, 216, 204, 0.6);
     text-decoration: none;
-    color: #333;
-    font-family: "Outfit", sans-serif;
-    font-weight: 500;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Fira Code', monospace;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold);
 }

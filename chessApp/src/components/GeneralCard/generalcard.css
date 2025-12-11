@@ -1,0 +1,14 @@
+.ledger-card {
+    flex: 1;
+    max-width: 500px;
+    background-color: var(--paper);
+    padding: 50px;
+    border-radius: 2px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    position: relative;
+
+    /* Borda Dupla Elegante */
+    border: 1px solid var(--paper-border);
+    outline: 4px double var(--paper-border);
+    outline-offset: -12px;
+}
